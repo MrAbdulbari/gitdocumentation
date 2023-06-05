@@ -1,0 +1,118 @@
+Saving the history of your project with all the changes made so far and also it is used for the contribution of the open source work where all the people share the work and keep track of every single change made by user is called GIT
+
+GITHUB is the base where all the repositories are stored like a dictionary.
+
+All the changes made in the folder where all the history is saved is in .git folder. the .git folder is hidden.
+
+```bash
+#before that we have to initilize the git into the folder
+git init
+```
+
+for knowing all the changes made in the folder, which are yet to be kept as history.
+
+ 
+
+```bash
+git status
+```
+
+To save  the change has been made in the folder.
+
+```bash
+#where . relates the current directory 
+git add .
+#can also write the file names rather than .
+```
+
+After adding the history of the file we have to save it to the repository.
+
+```bash
+#-m flag is used as message
+git commit -m "change made"
+```
+
+To know all the history where the changes have been made
+
+```bash
+git log
+
+```
+
+To remove a file from the track stage
+
+```json
+git restore --staged <filename>
+```
+
+If you want to go back to any particular history, copy the commit id and use the command
+
+```bash
+git reset commitid 
+```
+
+if you want to send the file to the back ground and dont want to commit but still you want those files to stay
+
+```bash
+git stash
+```
+
+To get those back stage files.
+
+```bash
+git stash pop
+```
+
+to clear the backstage area files
+
+```bash
+git stash clear
+```
+
+So far we have created any repo or anything on github all these change made are stored in .git folder.
+
+To make a repository and put it on a public display. First create the repository in github and and copy the url of the repository.
+
+```bash
+git remote add origin <copied url>
+```
+
+```bash
+git remote -v 
+#this shows the url connected with the folder
+```
+
+To share the changes made in the folder with the url
+
+```bash
+git push origin master
+```
+
+### Branches
+
+When the commits are made all the commits are connected bottom to top.Default branch is the main/master branch. Main branch is used by many so always creating the branch make it easy.
+
+```bash
+git branch newbranch
+git checkout newbranch
+#the HEAD is pointing out to the newbranch 
+#once the work is completed on the newbranch merge that with the main branch
+git merge newbranch
+#once the merge is done the newbranch is completed and the changes made to the main branch.
+```
+
+In the open source world if you want to contribute to the project first we need to fork the project into our account.
+
+Then use :
+
+```bash
+git clone <git url>
+#once cloned we will have the copy of the repo where we can make changes.
+
+```
+
+For sending the merge request or any changes made to show in the actual url:
+
+```bash
+git add origin upstream <original url>
+```
